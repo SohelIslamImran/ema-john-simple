@@ -1,5 +1,5 @@
 {
-  "homepage": "https://sohelislamimran.github.io/ema-john-simple/",
+  "homepage": "https://sohelislamimran.github.io/ema-john-simple",
   "name": "ema-john-simple",
   "version": "0.1.0",
   "private": true,
@@ -10,6 +10,7 @@
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
+    "deploy": "^1.0.3",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-scripts": "4.0.3",
