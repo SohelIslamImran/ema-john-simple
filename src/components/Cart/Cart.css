@@ -1,0 +1,40 @@
+.title, .items {
+    text-align: center;
+}
+
+.items {
+    font-size: 20px;
+}
+
+.cart-summary {
+    width: 250px;
+}
+
+.cart-summary td {
+    padding: 6px;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.cart-summary tfoot td {
+    color: #b12704;
+    font-size: 17px;
+    font-weight: 700;
+    border-top: 1px solid gray;
+}
+
+.review-btn{
+    background-color:#f0c14b;
+    border: 1px solid#846a29;
+    border-radius: 3px;
+    color: #111;
+    width: 204px;
+    height: 29px;
+    cursor: pointer;
+    margin-top: 5px;
+    margin-left: 20px;
+  }
+  
+  .review-btn:hover {
+    background-color:#e9b93f;
+  }
