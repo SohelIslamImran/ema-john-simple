@@ -9,7 +9,6 @@ const Shop = () => {
     const [products, setProducts] = useState(first10);
     const [cart, setCart] = useState([]);
     const addProduct = (product) => {
-        console.log(product);
         const newCart = [...cart, product];
         setCart(newCart);
     }
@@ -17,7 +16,7 @@ const Shop = () => {
         <div className="shop-container">
             <div className="product-container">
                 {
-                    products.map(product => <Product addProduct={addProduct} product={product}></Product>)
+                    products.map(product => <Product key={product.key} addProduct={addProduct} product={product}></Product>)
                 }
             </div>
             <div className="cart-container">
