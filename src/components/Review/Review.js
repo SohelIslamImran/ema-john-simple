@@ -1,10 +1,25 @@
 import React, { useEffect, useState } from 'react';
 import fakeData from '../../fakeData';
-import { getDatabaseCart } from '../../utilities/databaseManager';
+import { getDatabaseCart, processOrder, removeFromDatabaseCart } from '../../utilities/databaseManager';
+import Cart from '../Cart/Cart';
 import ReviewItem from '../ReviewItem/ReviewItem';
+import happyImg from '../../images/giphy.gif';
 
 const Review = () => {
     const [cart, setCart] = useState([]);
+    const [orderPlaced, setOrderPlaced] = useState(false);
+
+    const placeOrder = () => {
+        setCart([]);
+        setOrderPlaced(true);
+        processOrder();
+    }
+
+    const removeProduct = productKey => {
+        const newCart = cart.filter(pd => pd.key !== productKey);
+        setCart(newCart);
+        removeFromDatabaseCart(productKey);
+    };
 
     useEffect(() => {
         const savedCart = getDatabaseCart();
@@ -13,16 +28,26 @@ const Review = () => {
             const product = fakeData.find(pd => key === pd.key);
             product.quantity = savedCart[key];
             return product;
-        })
-        setCart(cartProducts)
+        });
+        setCart(cartProducts);
     }, []);
 
     return (
-        <div>
-            <h1>Cart Items: {cart.length}</h1>
-            {
-                cart.map(product => <ReviewItem key={product.key} product={product}></ReviewItem>)
-            }
+        <div className="shop-container">
+            <div className="product-container">
+                <h2>Cart Items: {cart.length}</h2>
+                {
+                    cart.map(product => <ReviewItem key={product.key} removeProduct={removeProduct} product={product}></ReviewItem>)
+                }
+                {
+                    orderPlaced && <img style={{marginLeft: "200px"}} src={happyImg} alt=""/>
+                }
+            </div>
+            <div className="cart-container">
+                <Cart cart={cart}>
+                    <button onClick={placeOrder} className="review-btn">Place Order</button>
+                </Cart>
+            </div>
         </div>
     );
 };
