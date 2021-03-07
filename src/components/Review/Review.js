@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import fakeData from '../../fakeData';
+import happyImg from '../../images/giphy.gif';
 import { getDatabaseCart, processOrder, removeFromDatabaseCart } from '../../utilities/databaseManager';
 import Cart from '../Cart/Cart';
 import ReviewItem from '../ReviewItem/ReviewItem';
-import happyImg from '../../images/giphy.gif';
 
 const Review = () => {
     const [cart, setCart] = useState([]);
@@ -40,7 +40,7 @@ const Review = () => {
                     cart.map(product => <ReviewItem key={product.key} removeProduct={removeProduct} product={product}></ReviewItem>)
                 }
                 {
-                    orderPlaced && <img style={{marginLeft: "200px"}} src={happyImg} alt=""/>
+                    orderPlaced && <img style={{ marginLeft: "300px" }} src={happyImg} alt="" />
                 }
             </div>
             <div className="cart-container">

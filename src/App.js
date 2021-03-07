@@ -1,22 +1,19 @@
-import './App.css';
-import Header from './components/Header/Header';
-import Shop from './components/Shop/Shop';
-import Review from './components/Review/Review';
-import Inventory from './components/Inventory/Inventory';
 import {
   BrowserRouter as Router,
-  Switch,
-  Route,
-  Link
+  Route, Switch
 } from "react-router-dom";
+import Header from './components/Header/Header';
+import Inventory from './components/Inventory/Inventory';
 import NotFound from './components/NotFound/NotFound';
 import ProductDetails from './components/ProductDetails/ProductDetails';
+import Review from './components/Review/Review';
+import Shop from './components/Shop/Shop';
 
 function App() {
   return (
     <div>
-      <Header></Header>
       <Router>
+        <Header></Header>
         <Switch>
           <Route path="/shop">
             <Shop></Shop>

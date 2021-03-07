@@ -6,7 +6,7 @@ import Product from '../Product/Product';
 const ProductDetails = () => {
     const { productKey } = useParams();
     const product = fakeData.find(product => product.key === productKey)
-    
+
     return (
         <div>
             <h1>Your Product Details</h1>

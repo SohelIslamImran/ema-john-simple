@@ -9,14 +9,14 @@ const Product = (props) => {
     return (
         <div className="product">
             <div>
-                <img src={img} alt=""/>
+                <img src={img} alt="" />
             </div>
             <div className="item-details">
                 <h4 className="item-header"><Link to={"/product/" + key}>{name}</Link></h4>
                 <p><small>By: {seller}</small></p>
                 <p>${price}</p>
                 <p><small>Only {stock} left in stock - Order soon</small></p>
-                { props.showAddToCart && <button onClick={() => props.addProduct(props.product)} className="buy-btn"><FontAwesomeIcon icon={faShoppingCart} /> Add to Cart</button> }
+                {props.showAddToCart && <button onClick={() => props.addProduct(props.product)} className="buy-btn"><FontAwesomeIcon icon={faShoppingCart} /> Add to Cart</button>}
             </div>
         </div>
     );

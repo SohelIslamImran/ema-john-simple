@@ -44,7 +44,7 @@ const Cart = (props) => {
                     </tr>
                 </tfoot>
             </table>
-                { props.children }
+            { props.children}
         </div>
     );
 };

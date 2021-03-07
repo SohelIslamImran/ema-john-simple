@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import fakeData from '../../fakeData';
+import { addToDatabaseCart, getDatabaseCart } from '../../utilities/databaseManager.js';
 import Cart from '../Cart/Cart';
 import Product from '../Product/Product';
 import './Shop.css';
-import { addToDatabaseCart, getDatabaseCart } from '../../utilities/databaseManager.js';
 
 
 const Shop = () => {
