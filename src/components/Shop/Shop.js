@@ -10,6 +10,8 @@ import './Shop.css';
 const Shop = () => {
     const first10 = fakeData.slice(0, 10);
     const [products, setProducts] = useState(first10);
+    console.log(setProducts);
+    
     const [cart, setCart] = useState([]);
 
     useEffect(() => {
