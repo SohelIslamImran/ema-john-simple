@@ -5,7 +5,7 @@ const Inventory = () => {
     const product = {};
 
     const handleAddProduct = () => {
-        fetch("http://localhost:8000/addProduct", {
+        fetch("https://ema-john-simple-server.herokuapp.com/addProduct", {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(product)
@@ -17,10 +17,10 @@ const Inventory = () => {
     return (
         <div>
             <form action="">
-                <p>Name: <input type="text"/></p>
-                <p>Price: <input type="number"/></p>
-                <p>Quantity: <input type="number"/></p>
-                <p>Product Image: <input type="file"/></p>
+                <p>Name: <input type="text" /></p>
+                <p>Price: <input type="number" /></p>
+                <p>Quantity: <input type="number" /></p>
+                <p>Product Image: <input type="file" /></p>
             </form>
             <button onClick={handleAddProduct}>Add Product</button>
         </div>
