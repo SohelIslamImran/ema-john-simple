@@ -6,7 +6,7 @@ const Cart = (props) => {
     let subtotal = 0;
     let shipping = 0;
     cart.forEach(product => {
-        subtotal += product.price * product.quantity;
+        subtotal += product.price * product.quantity || 1;
         shipping += product.shipping;
     });
     const totalBeforeTax = subtotal + shipping;
