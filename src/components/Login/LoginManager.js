@@ -20,6 +20,7 @@ export const handleGoogleSignIn = () => {
                 photo: photoURL,
                 success: true
             };
+            setUserToken();
             return signedInUser;
         })
         .catch(err => {
@@ -28,6 +29,15 @@ export const handleGoogleSignIn = () => {
             newUserInfo.success = false;
             return newUserInfo;
         })
+}
+
+const setUserToken = () => {
+    firebase.auth().currentUser.getIdToken(true).then((idToken) => {
+        sessionStorage.setItem('userToken', idToken)
+    })
+        .catch((error) => {
+            console.log(error.message);
+        });
 }
 
 export const handleFbSignIn = () => {
